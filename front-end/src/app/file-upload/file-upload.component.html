@@ -1,0 +1,79 @@
+<div class="card">
+
+<div class="card-header primary">
+ <p class="text-justify"> <b>Géneration d'une carte au format PDF</b> </p>
+</div>
+<div class="card-body">
+
+
+<form #userForm="ngForm">
+      <div class="row">
+        <div class="col">
+          <input class="form-control " type="text" required #name="ngModel" placeholder="Nom"
+          [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="userModel.nom" name="nom" class="form-control">
+        </div>
+
+        <div class="col">
+          <input class="form-control" type="text"required name="prenom" placeholder="Prenom" value="" [(ngModel)]="userModel.prenom" class="form-control">
+        </div>
+      </div>
+<br>
+<div class="row">
+  <div class="col" >
+    <input class="form-control" type="text" placeholder="الاسم العائلي" required name="nomArabe" value="" [(ngModel)]="userModel.nomArabe" class="form-control">
+  </div>
+  <div class="col" >
+    <input class="form-control" type="text" required name="prenomArabe" placeholder="الاسم الشخصي" value="" [(ngModel)]="userModel.prenomArabe" class="form-control">
+  </div>
+</div>
+
+<br>
+<div class="row">
+  <div class="col">
+    <input type="text" placeholder="CIN" required name="cin" value="" [(ngModel)]="userModel.cin" class="form-control">
+  </div>
+  <div class="col">
+    <input type="text" placeholder="Profession" required name="profession" value="" [(ngModel)]="userModel.profession" class="form-control">
+  </div>
+  <div class="col" >
+    <input type="text" required  #date="ngModel" pattern="\d{4}-\d{2}-\d{2}"  [class.is-invalid]="date.invalid && date.touched"
+     name="dateDeNaissance" placeholder="date de naissance format:YYYY-MM-DD" value="" [(ngModel)]="userModel.dateDeNaissance" class="form-control">
+     <small class="text-danger" [class.d-none]="date.valid || date.untouched" > format de date non valide </small>
+  </div>
+</div>
+<br>
+
+<div class="row">
+
+  <div class="col">
+    <input placeholder="العنوان" required type="text" name="adresse" value="" [(ngModel)]="userModel.adresse" class="form-control">
+  </div>
+  <div class="col">
+    <input class="form-control form-control-lg" required type="file" (change)="onChange($event)"  class="form-control"  id="formFile">
+  </div>
+</div>
+<br>
+<div >
+  <label class="loun">type carte </label>
+  <select class="form-control" required class="custom-select" name="typeCarte" [(ngModel)]="userModel.typeCarte" >
+    <option *ngFor="let type of types"> {{ type }} </option>
+  </select>
+</div>
+
+
+<br>
+
+<div class="container bg-light">
+       <div class="col-md-12 text-center">
+	<button  [disabled]="userForm.form.invalid" class="btn btn-dark " (click)="onUpload()"
+		type="submit">
+		Génerer le fichier pdf
+	</button>
+
+</div>
+  </div>
+
+</form>
+</div>
+
+</div>

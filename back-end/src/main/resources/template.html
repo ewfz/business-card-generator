@@ -1,0 +1,202 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=cairo" rel="stylesheet" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+    <style>
+        @font-face {
+            font-family: arbi;
+            src: url('/home/business-card-generator/back-end/tahafont.ttf') format('truetype');
+        }
+        .card-face-2 {
+
+            height: 257px;
+            width: 410px;
+            background-image: url("/home/business-card-generator/back-end/src/main/resources/templatewallpaper.png");
+            background-size: cover;
+            position: relative;
+
+        }
+
+        .qrcode {
+            position: relative;
+            top: 150px;
+            left: 25px;
+            height: 100px;
+            width: 100px;
+        }
+
+        .title{
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            font-family:  arbi;
+            font-size: 25px;
+
+        }
+        .card-face-1{
+
+            height: 257px;
+            width: 410px;
+            background-image: url("/home/business-card-generator/back-end/src/main/resources/templatewallpaper.png");
+            background-size: cover;
+
+        }
+
+        .header {
+            margin-top: 300px;
+            text-align: center;
+            font-family:  arbi;
+            font-size: 17px;
+        }
+
+        .header-2 {
+            margin-top: 5px;
+            margin-left: 80px;
+            font-family:  arbi;
+            font-size: 8px;
+        }
+
+        .profil{
+            height: 130px;
+            width: 100px;
+            margin-left: 15px;
+            position: absolute;
+            font-family:  arbi;
+            font-size: 10px ;
+            text-align: center;
+        }
+
+        .numero {
+            font-family: serif;
+            height: 20px;
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+        .type-carte {
+            font-family: serif;
+            height: 20px;
+            margin-top: 10px;
+            margin-left: 20px;
+
+        }
+
+        .infos {
+
+            height: 80px;
+            width: 250px;
+            margin-left: 140px;
+            margin-top: 40px;
+            font-family:  arbi;
+            font-size: 11px;
+
+        }
+        .prenom{
+            font-family: Monospace;
+            left: 5px;
+            position: relative;
+            top: 0px;
+            height: 26.66px;
+            width: 130px;
+        }
+        .nom{
+            font-family: Monospace;
+            position: relative;
+            left: 5px;
+            top: -30px;
+            height: 26.66px;
+            width: 130px;
+        }
+        .prenomarabe{
+            font-size: 13px;
+            position: relative;
+            left: 120px;
+            top: -32px;
+            height: 26.66px;
+            width: 130px;
+            text-align: right;
+
+        }
+        .nomarabe{
+            font-size: 13px;
+            position: relative;
+            left: 120px;
+            top: -60px;
+            height: 26.66px;
+            width: 130px;
+            text-align: right;
+        }
+        .adresse{
+            font-size: 13px;
+            position: relative;
+            top: -40px;
+            height: 26.66px;
+            width: 250px;
+            text-align: right;
+        }
+
+        body{
+            box-sizing: border-box;
+            padding:0;
+            margin:0;
+        }
+        .signature{
+            margin-left: 220px;
+            margin-top: 20px;
+        }
+        .footer {
+            font-size: 8px ;
+            text-align: center;
+            margin-left: 150px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card-face-1">
+
+        <div class="header">
+            البطاقة المهنية
+        </div>
+
+        <div class="header-2">
+            CARTE PROFESSIONNELLE
+        </div>
+
+        <div class="profil">
+            <div class="numero">Nº:$numero</div>
+            <div class="pic"> <img src="/home/business-card-generator/back-end/src/main/resources/$picture" alt="" width="120px" height="140px"> </div>
+            <div class="type-carte">$cin</div>
+        </div>
+
+        <div class="infos">
+            <div class="prenom"> <b>Prénom</b>  : $prenom  </div>
+            <div class="prenomarabe"> <b>الاسم الشخصي</b>  : $arpre  </div>
+            <div class="nom">  <b>Nom</b>  : $nom </div>
+            <div class="nomarabe">  <b>الاسم العائلي</b> : $arnom  </div>
+            <div class="adresse">  <b> العنوان</b> : $adresse </div>
+        </div>
+
+        <div class="signature">
+            <img src="/home/business-card-generator/back-end/src/main/resources/signature.png" width="100px" height="40px" alt="">
+        </div>
+        <div class="footer">
+        Valable jusqu'au      $currentdate    صالحة إلى غاية
+        </div>
+
+    </div>
+    <div class="card-face-2">
+        <div class="title">
+            البطاقة المهنية
+        </div>
+
+        <div class="qrcode">
+            <img src="/home/business-card-generator/back-end/src/main/resources/qrcodeimage" width="70px" height="70px" alt="">
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
